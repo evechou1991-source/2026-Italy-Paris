@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Europe 2026 | Mia's Trip Dashboard</title>
+    <title>Europe 2026 | Trip Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -11,6 +11,7 @@
         .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
         .sticky-header { position: sticky; top: 0; z-index: 50; }
         .day-badge { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+        .expense-item { border-bottom: 1px solid #f1f5f9; padding: 8px 0; }
     </style>
 </head>
 <body class="antialiased">
@@ -21,23 +22,23 @@
                 <span class="text-3xl">🇪🇺</span>
                 <div>
                     <h1 class="text-xl font-extrabold tracking-tight">2026 歐洲夏季巡禮</h1>
-                    <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Paris · Pisa · Rome</p>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Paris · Pisa · Rome</p>
                 </div>
             </div>
             
-            <div class="flex gap-6 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
+            <div class="flex gap-4 overflow-x-auto w-full md:w-auto">
                 <div class="flex-shrink-0 flex items-center gap-3 bg-blue-50 px-4 py-2 rounded-xl border border-blue-100">
                     <span class="text-lg">🛫</span>
-                    <div class="text-[10px] leading-tight">
-                        <p class="font-bold text-blue-600">去程 EK387/073</p>
-                        <p class="text-slate-500">07/25 00:30 TPE ➔ 13:35 CDG</p>
+                    <div class="text-[10px] leading-tight font-mono">
+                        <p class="font-bold text-blue-600">07/25 00:30 TPE ➔ 13:35 CDG</p>
+                        <p class="text-slate-400">EK387 / EK073 (A350/A380)</p>
                     </div>
                 </div>
                 <div class="flex-shrink-0 flex items-center gap-3 bg-slate-100 px-4 py-2 rounded-xl border border-slate-200">
                     <span class="text-lg">🛬</span>
-                    <div class="text-[10px] leading-tight">
-                        <p class="font-bold text-slate-600">回程 EK096/386</p>
-                        <p class="text-slate-500">08/06 22:10 FCO ➔ 21:20 TPE</p>
+                    <div class="text-[10px] leading-tight font-mono">
+                        <p class="font-bold text-slate-600">08/06 22:10 FCO ➔ 21:20 TPE</p>
+                        <p class="text-slate-400">EK096 / EK386 (B777/A350)</p>
                     </div>
                 </div>
             </div>
@@ -47,106 +48,118 @@
     <main class="max-w-7xl mx-auto px-4 pb-20">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
-            <div class="lg:col-span-3 space-y-10">
+            <div class="lg:col-span-3 space-y-8">
                 
                 <div class="relative pl-12">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-200 rounded-full"></div>
-                    <div class="absolute left-[-18px] top-0 w-10 h-10 day-badge rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200">01</div>
-                    
-                    <div class="glass-card rounded-3xl p-6 shadow-sm">
-                        <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-2xl font-extrabold text-slate-800">7/25 抵達藝術之都</h3>
-                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full">Paris, France</span>
+                    <div class="absolute left-[-18px] top-0 w-10 h-10 day-badge rounded-full flex items-center justify-center text-white font-bold shadow-lg">01</div>
+                    <div class="glass-card rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-extrabold text-slate-800">7/25 抵達巴黎 · 瑪黑生活</h3>
+                            <span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-lg border border-emerald-100">FRANCE</span>
                         </div>
-                        
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div class="space-y-2">
-                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-tighter flex items-center gap-1">📍 行程 Highlight</p>
-                                <ul class="text-sm text-slate-600 space-y-1">
-                                    <li>• 13:35 抵達 CDG 機場</li>
-                                    <li>• 飯店 Check-in & 瑪黑區散步</li>
-                                    <li>• 塞納河畔夕陽巡禮</li>
-                                </ul>
+                            <div class="space-y-1">
+                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">📍 行程 Highlight</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">• 機場接送至瑪黑區<br>• 聖保羅村古董探險<br>• 塞納河散步</p>
                             </div>
-                            <div class="space-y-2 border-l border-slate-100 md:pl-6">
-                                <p class="text-[10px] font-black text-blue-500 uppercase tracking-tighter flex items-center gap-1">🏨 住宿資訊</p>
-                                <p class="text-sm font-semibold">Le Marais Art Loft</p>
-                                <p class="text-xs text-slate-400">鄰近聖保羅地鐵站，步行 5 分鐘</p>
+                            <div class="space-y-1 border-l border-slate-100 md:pl-6">
+                                <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest">🏨 住宿資訊</p>
+                                <p class="text-sm font-semibold">Marais Loft Apartment</p>
+                                <p class="text-[10px] text-slate-400 italic">鄰近 Rue des Rosiers</p>
                             </div>
-                            <div class="space-y-2 border-l border-slate-100 md:pl-6">
-                                <p class="text-[10px] font-black text-orange-500 uppercase tracking-tighter flex items-center gap-1">🍴 建議餐廳</p>
-                                <p class="text-sm font-semibold">L'As du Fallafel</p>
-                                <p class="text-xs text-slate-400">瑪黑區最有名的猶太口袋餅</p>
+                            <div class="space-y-1 border-l border-slate-100 md:pl-6">
+                                <p class="text-[10px] font-black text-orange-500 uppercase tracking-widest">🍴 建議餐廳</p>
+                                <p class="text-sm font-semibold">Le Comptoir de La Gastronomie</p>
+                                <p class="text-[10px] text-slate-400">招牌：松露油封鴨、鵝肝醬</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="relative pl-12">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-200 rounded-full"></div>
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-200 rounded-full border-dashed"></div>
                     <div class="absolute left-[-18px] top-0 w-10 h-10 day-badge rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200">08</div>
-                    
-                    <div class="glass-card rounded-3xl p-6 shadow-sm ring-2 ring-blue-500 ring-offset-2">
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <h3 class="text-2xl font-extrabold text-slate-800 italic">8/01 比薩聖典 ⛪</h3>
-                                <p class="text-sm text-blue-600 font-bold">Baptism Ceremony Day</p>
-                            </div>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">Pisa, Italy</span>
+                    <div class="glass-card rounded-3xl p-6 shadow-sm border-2 border-blue-100 bg-blue-50/30">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-extrabold text-blue-800 italic">8/01 比薩領洗聖典 ⛪</h3>
+                            <span class="px-3 py-1 bg-blue-500 text-white text-[10px] font-bold rounded-lg uppercase tracking-widest">Main Event</span>
                         </div>
-                        
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div class="space-y-2">
-                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-tighter">📍 核心行程</p>
-                                <p class="text-sm font-bold text-slate-700">下午 14:00 領洗儀式開始</p>
-                                <p class="text-xs text-slate-500 leading-relaxed">正式服裝出席。結束後於廣場與斜塔留影。</p>
+                            <div class="space-y-1">
+                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">📍 儀式安排</p>
+                                <p class="text-sm text-slate-700 leading-relaxed font-bold">14:00 領洗儀式開始<br>16:00 斜塔合照留影</p>
                             </div>
-                            <div class="space-y-2 border-l border-slate-100 md:pl-6">
-                                <p class="text-[10px] font-black text-blue-500 uppercase tracking-tighter">🏨 住宿資訊</p>
-                                <p class="text-sm font-semibold italic text-slate-400">Tuscany Villa (待定)</p>
+                            <div class="space-y-1 border-l border-slate-200 md:pl-6">
+                                <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest">🏨 住宿資訊</p>
+                                <p class="text-sm font-semibold">Villa in Tuscany</p>
                             </div>
-                            <div class="space-y-2 border-l border-slate-100 md:pl-6">
-                                <p class="text-[10px] font-black text-orange-500 uppercase tracking-tighter">🍴 慶祝晚宴</p>
-                                <p class="text-sm font-semibold">Trattoria di Toscana</p>
-                                <p class="text-xs text-slate-400 font-bold text-emerald-600 italic">已預約 19:30</p>
+                            <div class="space-y-1 border-l border-slate-200 md:pl-6">
+                                <p class="text-[10px] font-black text-orange-500 uppercase tracking-widest">🍴 慶祝晚宴</p>
+                                <p class="text-sm font-bold text-blue-600 underline">Private Chef at Villa</p>
+                                <p class="text-[10px] text-slate-400">已確認晚間 19:30 開餐</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="text-center py-10">
-                    <p class="text-slate-300 italic">... 行程依此類推 ...</p>
+                <div class="text-center py-6">
+                    <p class="text-slate-300 text-sm italic">... 更多行程規劃中 ...</p>
                 </div>
 
             </div>
 
-            <div class="lg:col-span-1">
-                <div class="sticky top-24 space-y-6">
-                    <section class="bg-slate-900 text-white p-6 rounded-3xl shadow-xl">
-                        <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
-                            <span class="text-yellow-400">⚠️</span> 注意事項
-                        </h2>
-                        <ul class="text-sm space-y-4 text-slate-300">
-                            <li class="flex gap-3">
-                                <span class="font-bold text-yellow-400">01</span>
-                                <p>夏季義大利氣溫約 32°C+，請務必攜帶折傘或帽子。</p>
-                            </li>
-                            <li class="flex gap-3 border-t border-slate-800 pt-4">
-                                <span class="font-bold text-blue-400">02</span>
-                                <p>Nono 同行，隨身包包內請備好：洗鼻器、小林退熱貼、兩套乾淨衣服。</p>
-                            </li>
-                            <li class="flex gap-3 border-t border-slate-800 pt-4">
-                                <span class="font-bold text-emerald-400">03</span>
-                                <p>阿聯酋長程段可事先在 App 選餐（含 Nono 的兒童餐）。</p>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm text-center">
-                        <p class="text-xs text-slate-400 font-bold uppercase mb-2">Current Mission</p>
-                        <p class="text-lg font-extrabold text-blue-600 italic">"Keep Calm and Love Art"</p>
-                        <p class="text-[10px] text-slate-300 mt-4">Version 1.2 | Updated 2026.03.30</p>
+            <div class="lg:col-span-1 space-y-6">
+                
+                <section class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+                    <h2 class="text-lg font-extrabold mb-4 flex items-center gap-2">
+                        <span class="text-emerald-500">💰</span> 費用預估 (人均)
+                    </h2>
+                    <div class="space-y-1">
+                        <div class="expense-item flex justify-between text-sm">
+                            <span class="text-slate-500">國際機票 (阿聯酋)</span>
+                            <span class="font-mono font-bold">NT$ 55,000</span>
+                        </div>
+                        <div class="expense-item flex justify-between text-sm">
+                            <span class="text-slate-500">住宿 (13 晚預計)</span>
+                            <span class="font-mono font-bold">NT$ 42,000</span>
+                        </div>
+                        <div class="expense-item flex justify-between text-sm">
+                            <span class="text-slate-500">歐洲交通 (火車/車租)</span>
+                            <span class="font-mono font-bold">NT$ 12,000</span>
+                        </div>
+                        <div class="expense-item flex justify-between text-sm">
+                            <span class="text-slate-500">餐飲預算 (每日預估)</span>
+                            <span class="font-mono font-bold">NT$ 30,000</span>
+                        </div>
+                        <div class="pt-4 flex justify-between items-end text-blue-600">
+                            <span class="text-xs font-bold uppercase">Estimated Total</span>
+                            <span class="text-2xl font-black font-mono tracking-tighter">NT$ 139K</span>
+                        </div>
                     </div>
+                    <p class="mt-4 text-[10px] text-slate-400 italic font-medium leading-relaxed">
+                        * 費用不含個人血拼購物與藝術品收藏支出。匯率參考：1 EUR ≈ 35 TWD。
+                    </p>
+                </section>
+
+                <section class="bg-slate-900 text-white p-6 rounded-3xl shadow-xl">
+                    <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <span class="text-yellow-400">⚠️</span> 旅行小提示
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-[10px] text-blue-400 font-bold uppercase mb-1 tracking-tighter">👶 Nono 專屬提醒</p>
+                            <p class="text-xs text-slate-300 leading-relaxed italic">阿聯酋嬰兒車可在登機口交付；機上提供嬰兒搖籃（需先預約）。</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800">
+                            <p class="text-[10px] text-emerald-400 font-bold uppercase mb-1 tracking-tighter">📱 通訊準備</p>
+                            <p class="text-xs text-slate-300 leading-relaxed">建議選用 Orange 或 DJB 的 eSIM，巴黎地鐵內訊號較差。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="p-6 border border-dashed border-slate-300 rounded-3xl text-center">
+                    <p class="text-[10px] text-slate-400 font-bold tracking-widest">MIA'S CURATED TRIP</p>
                 </div>
             </div>
 
